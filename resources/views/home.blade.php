@@ -17,7 +17,7 @@
                         <h2 class="text-lg font-semibold text-ink-50">{{ __('home.routes.self.title') }}</h2>
                     </div>
                     <p class="mt-3 text-sm leading-6 text-ink-300">{{ __('home.routes.self.text') }}</p>
-                    <form method="GET" action="{{ localized_route('categories.index') }}" class="mt-6 flex flex-col gap-3 sm:flex-row" role="search">
+                    <form method="GET" action="{{ localized_route('suppliers.index') }}" class="mt-6 flex flex-col gap-3 sm:flex-row" role="search">
                         <label for="home-q" class="sr-only">{{ __('home.routes.self.label') }}</label>
                         <input id="home-q" name="q" type="search" maxlength="80" placeholder="{{ __('home.routes.self.placeholder') }}"
                                class="h-11 flex-1 rounded-lg border border-ink-600 bg-ink-900 px-3.5 text-ink-50 placeholder:text-ink-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30">
@@ -37,7 +37,7 @@
                         @endforeach
                     </ul>
                     <div class="mt-6">
-                        <x-button :href="localized_route('contact', ['topic' => 'sourcing'])" icon="heroicon-m-arrow-right">{{ __('home.routes.managed.button') }}</x-button>
+                        <x-button :href="localized_route('sourcing.create')" icon="heroicon-m-arrow-right">{{ __('home.routes.managed.button') }}</x-button>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <h2 class="text-2xl font-semibold text-ink-50">{{ __('home.cta.title') }}</h2>
                     <p class="mt-3 text-ink-300">{{ __('home.cta.text') }}</p>
                 </div>
-                <x-button :href="localized_route('contact', ['topic' => 'sourcing'])" size="lg" icon="heroicon-m-arrow-right">{{ __('ui.cta.start_request') }}</x-button>
+                <x-button :href="localized_route('sourcing.create')" size="lg" icon="heroicon-m-arrow-right">{{ __('ui.cta.start_request') }}</x-button>
             </div>
         </x-container>
     </section>

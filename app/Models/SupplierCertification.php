@@ -28,6 +28,12 @@ class SupplierCertification extends Model
         return ['valid_until' => 'date'];
     }
 
+    /** @return BelongsTo<Certification, $this> */
+    public function certification(): BelongsTo
+    {
+        return $this->belongsTo(Certification::class);
+    }
+
     /** @return BelongsTo<SupplierDocument, $this> */
     public function document(): BelongsTo
     {

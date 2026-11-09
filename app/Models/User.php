@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,6 +58,18 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
     public function suppliers(): BelongsToMany
     {
         return $this->belongsToMany(Supplier::class, 'supplier_users')->withPivot('role')->withTimestamps();
+    }
+
+    /** @return BelongsToMany<Supplier, $this> */
+    public function favoriteSuppliers(): BelongsToMany
+    {
+        return $this->belongsToMany(Supplier::class, 'favorites')->withTimestamps();
+    }
+
+    /** @return HasMany<SourcingRequest, $this> */
+    public function sourcingRequests(): HasMany
+    {
+        return $this->hasMany(SourcingRequest::class);
     }
 
     /** The supplier company this supplier-type user belongs to (one per account). */

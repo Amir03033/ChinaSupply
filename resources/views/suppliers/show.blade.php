@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-2 md:items-end">
-                <x-button :href="localized_route('contact', ['topic' => 'sourcing', 'supplier' => $supplier->slug])" size="lg">{{ __('suppliers.request_intro') }}</x-button>
+                <x-button :href="localized_route('sourcing.create', ['supplier' => $supplier->slug])" size="lg">{{ __('suppliers.request_intro') }}</x-button>
                 <p class="max-w-xs text-xs text-ink-400 md:text-right">{{ __('suppliers.request_intro_hint') }}</p>
             </div>
         </header>

@@ -13,6 +13,7 @@ return [
         'main' => 'Hoofdmenu',
         'toggle' => 'Menu openen of sluiten',
         'home' => 'Home',
+        'suppliers' => 'Leveranciers',
         'categories' => 'Categorieën',
         'how_it_works' => 'Hoe het werkt',
         'verification' => 'Verificatie',

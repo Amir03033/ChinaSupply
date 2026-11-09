@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Categories\SaveCategory;
+use App\Actions\Sourcing\SubmitSourcingRequest;
 use App\Actions\Suppliers\SaveSupplier;
 use App\Actions\Suppliers\TransitionPipelineStatus;
 use App\Actions\Verification\RecordVerificationCheck;
@@ -10,11 +11,13 @@ use App\Enums\SupplierPipelineStatus;
 use App\Enums\UserType;
 use App\Enums\VerificationCheckType;
 use App\Models\Category;
+use App\Models\SourcingRequest;
 use App\Models\Supplier;
 use App\Models\User;
 use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 pest()->extend(TestCase::class)
@@ -92,4 +95,17 @@ function publishedSupplier(array $attributes = [], ?Category $category = null): 
     app(TransitionPipelineStatus::class)->handle($supplier, SupplierPipelineStatus::Published, staffUser(StaffRole::Administrator));
 
     return $supplier->refresh();
+}
+
+/**
+ * @param  array<string, mixed>  $override
+ */
+function makeRequest(array $override = [], ?User $buyer = null): SourcingRequest
+{
+    Notification::fake();
+
+    return app(SubmitSourcingRequest::class)->handle($override + [
+        'contact_name' => 'Lisa', 'contact_email' => 'lisa@example.nl', 'title' => 'Yoga mats', 'description' => 'Eco yoga mats with our logo, 6mm thick.',
+        'customization' => 'logo', 'quantity' => 500, 'currency' => 'EUR', 'destination_country' => 'NL',
+    ], [], $buyer, 'nl');
 }

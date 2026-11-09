@@ -1,6 +1,7 @@
 @props(['alternates' => []])
 @php
     $nav = [
+        ['route' => 'suppliers.index', 'label' => __('ui.nav.suppliers')],
         ['route' => 'categories.index', 'label' => __('ui.nav.categories')],
         ['route' => 'how-it-works', 'label' => __('ui.nav.how_it_works')],
         ['route' => 'verification', 'label' => __('ui.nav.verification')],
@@ -30,7 +31,7 @@
             @else
                 <a href="{{ route('login') }}" class="text-sm text-ink-300 hover:text-ink-50">{{ __('ui.nav.login') }}</a>
             @endauth
-            <x-button :href="localized_route('contact', ['topic' => 'sourcing'])" size="sm">{{ __('ui.cta.start_request') }}</x-button>
+            <x-button :href="localized_route('sourcing.create')" size="sm">{{ __('ui.cta.start_request') }}</x-button>
         </div>
 
         <button type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink-200 hover:bg-ink-800 xl:hidden"
@@ -48,7 +49,7 @@
             <a href="{{ auth()->check() ? route('account') : route('login') }}" class="rounded-md px-3 py-3 text-ink-300 hover:bg-ink-800">{{ auth()->check() ? __('ui.nav.account') : __('ui.nav.login') }}</a>
             <div class="mt-3 flex items-center justify-between gap-3 px-3">
                 <x-lang-switcher :alternates="$alternates" />
-                <x-button :href="localized_route('contact', ['topic' => 'sourcing'])" size="sm">{{ __('ui.cta.start_request') }}</x-button>
+                <x-button :href="localized_route('sourcing.create')" size="sm">{{ __('ui.cta.start_request') }}</x-button>
             </div>
         </x-container>
     </div>

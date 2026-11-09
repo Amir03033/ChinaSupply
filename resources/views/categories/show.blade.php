@@ -40,7 +40,7 @@
                 <x-empty-state class="mt-5" icon="heroicon-o-building-office-2" :title="__('categories.no_suppliers_title')">
                     {{ __('categories.no_suppliers_text', ['name' => $translation->name]) }}
                     <x-slot:actions>
-                        <x-button :href="localized_route('contact', ['topic' => 'sourcing'])">{{ __('ui.cta.start_request') }}</x-button>
+                        <x-button :href="localized_route('sourcing.create')">{{ __('ui.cta.start_request') }}</x-button>
                     </x-slot:actions>
                 </x-empty-state>
             @else

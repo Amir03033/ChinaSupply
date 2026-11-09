@@ -4,7 +4,7 @@ return [
     'title' => 'Contact',
     'meta' => 'Contact ChinaSupply for a sourcing request, questions about our services or supplier registration.',
     'lead' => 'Ask your question or describe what you need. We respond within two working days.',
-    'sourcing_notice' => 'Looking for a manufacturer? Choose the topic "Sourcing request" and describe your product, quantities and target price. A full request form with photo upload is coming soon.',
+    'sourcing_notice' => 'Looking for a manufacturer? Please use our request form instead: you can add photos and specifications there.',
     'message_hint' => 'For a sourcing request: product, estimated quantities, target price per unit and any requirements.',
     'privacy_label' => 'I agree to the processing of my data to answer my question, as described in the',
     'submit' => 'Send',

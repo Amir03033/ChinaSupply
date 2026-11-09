@@ -13,4 +13,6 @@ return [
     'document_type' => ['business_license' => 'Bedrijfsregistratie (business licence)', 'export_license' => 'Exportvergunning', 'certificate' => 'Certificaat', 'audit_report' => 'Auditrapport', 'factory_photo' => 'Fabrieksfoto', 'product_catalog' => 'Productcatalogus', 'evidence' => 'Verificatiebewijs', 'other' => 'Overig'],
     'document_status' => ['pending' => 'Wordt beoordeeld', 'approved' => 'Goedgekeurd', 'rejected' => 'Afgekeurd'],
     'channel' => ['email' => 'E-mail', 'wechat' => 'WeChat', 'whatsapp' => 'WhatsApp', 'phone' => 'Telefoon', 'video_call' => 'Videogesprek', 'marketplace_chat' => 'Marketplace-chat', 'meeting' => 'Afspraak', 'other' => 'Anders'],
+    'request_status' => ['submitted' => 'Ingediend', 'in_review' => 'In behandeling', 'needs_info' => 'Info nodig van koper', 'sourcing' => 'Aan het zoeken', 'shortlist_ready' => 'Shortlist gedeeld', 'completed' => 'Afgerond', 'cancelled' => 'Geannuleerd', 'declined' => 'Afgewezen'],
+    'match_status' => ['suggested' => 'Voorgesteld', 'contacted' => 'Benaderd', 'quoted' => 'Offerte ontvangen', 'declined' => 'Afgewezen / ongeschikt', 'shortlisted' => 'Op shortlist', 'selected' => 'Gekozen door koper'],
 ];
