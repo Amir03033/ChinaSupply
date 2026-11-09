@@ -36,13 +36,22 @@
 
         <section class="mt-12" aria-labelledby="suppliers">
             <h2 id="suppliers" class="text-lg font-semibold text-ink-50">{{ __('categories.suppliers') }}</h2>
-            {{-- Supplier listings arrive in phase 2; until then this is an honest empty state with a real next step. --}}
-            <x-empty-state class="mt-5" icon="heroicon-o-building-office-2" :title="__('categories.no_suppliers_title')">
-                {{ __('categories.no_suppliers_text', ['name' => $translation->name]) }}
-                <x-slot:actions>
-                    <x-button :href="localized_route('contact', ['topic' => 'sourcing'])">{{ __('ui.cta.start_request') }}</x-button>
-                </x-slot:actions>
-            </x-empty-state>
+            @if ($suppliers->isEmpty())
+                <x-empty-state class="mt-5" icon="heroicon-o-building-office-2" :title="__('categories.no_suppliers_title')">
+                    {{ __('categories.no_suppliers_text', ['name' => $translation->name]) }}
+                    <x-slot:actions>
+                        <x-button :href="localized_route('contact', ['topic' => 'sourcing'])">{{ __('ui.cta.start_request') }}</x-button>
+                    </x-slot:actions>
+                </x-empty-state>
+            @else
+                <p class="mt-1 text-sm text-ink-400">{{ __('categories.suppliers_sorted') }}</p>
+                <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($suppliers as $supplier)
+                        <x-supplier-card :supplier="$supplier" />
+                    @endforeach
+                </div>
+                <div class="mt-6">{{ $suppliers->links() }}</div>
+            @endif
         </section>
     </x-container>
 </x-layouts.app>

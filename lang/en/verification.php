@@ -13,4 +13,16 @@ return [
         ['level' => 2, 'short' => 'Also business registration, address and company type (manufacturer or trader) checked.', 'checked' => 'Everything in level 1, plus the business registration in the official register, the business address and whether the company manufactures or trades.'],
         ['level' => 3, 'short' => 'Also the factory checked, through a live video tour or an on-site inspection.', 'checked' => 'Everything in level 2, plus a live video tour of production or an on-site inspection by an external inspection partner.'],
     ],
+    'checks' => [
+        'company_identity' => ['name' => 'Company identity'],
+        'contact' => ['name' => 'Contact details'],
+        'website_domain' => ['name' => 'Website and domain'],
+        'business_registration' => ['name' => 'Business registration'],
+        'business_address' => ['name' => 'Business address'],
+        'factory_existence' => ['name' => 'Factory existence'],
+        'certifications' => ['name' => 'Certifications'],
+        'production_capabilities' => ['name' => 'Production capabilities'],
+        'export_documentation' => ['name' => 'Export documentation'],
+        'external_inspection' => ['name' => 'External factory inspection'],
+    ],
 ];

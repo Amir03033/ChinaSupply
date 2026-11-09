@@ -21,7 +21,7 @@
                     <x-form.input name="company" :label="__('contact.attributes.company')" autocomplete="organization" />
                     <x-form.input name="phone" type="tel" :label="__('contact.attributes.phone')" autocomplete="tel" />
                 </div>
-                <x-form.textarea name="message" :label="__('contact.attributes.message')" required rows="6" :hint="__('contact.message_hint')" />
+                <x-form.textarea name="message" :label="__('contact.attributes.message')" required rows="6" :hint="__('contact.message_hint')" :value="$prefill" />
                 {{-- Honeypot --}}
                 <div class="hidden" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
                 @php($privacy = \App\Models\Page::where('key', 'privacy')->active()->with('translations')->first()?->translation())

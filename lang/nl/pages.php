@@ -90,7 +90,7 @@ return [
             'Wij controleren de gegevens en nemen contact op bij vragen.',
             'Na goedkeuring wordt je profiel gepubliceerd.',
         ],
-        'registration_notice' => 'Online zelfregistratie voor leveranciers komt binnenkort. Tot die tijd kun je je aanmelden via het contactformulier.',
+        'registration_notice' => 'Aanmelden kost ongeveer 15 minuten. Je kunt tussendoor stoppen: alles wordt automatisch opgeslagen.',
         'cta' => 'Meld je bedrijf aan',
     ],
     'about' => [

@@ -3,6 +3,7 @@
 use App\Enums\StaffRole;
 use App\Models\ContactEnquiry;
 use App\Models\Page;
+use Database\Seeders\OutreachTemplateSeeder;
 use Database\Seeders\PageSeeder;
 
 it('renders every admin page for an administrator with 2FA set up', function () {
@@ -18,6 +19,9 @@ it('renders every admin page for an administrator with 2FA set up', function () 
     $this->actingAs($admin);
 
     $page = Page::first();
+    $this->seed(OutreachTemplateSeeder::class);
+    $supplier = publishedSupplier();
+    $supplier->tasks()->create(['title' => 'Call', 'due_at' => now()]);
 
     foreach ([
         '/admin',
@@ -32,8 +36,14 @@ it('renders every admin page for an administrator with 2FA set up', function () 
         '/admin/users',
         '/admin/users/create',
         '/admin/activity-logs',
+        '/admin/suppliers',
+        '/admin/suppliers/create',
+        "/admin/suppliers/{$supplier->id}/edit",
+        '/admin/supplier-pipeline',
+        '/admin/tasks',
+        '/admin/outreach-templates',
     ] as $url) {
-        $this->get($url)->assertOk();
+        expect($this->get($url)->status())->toBe(200, "Failed: $url");
     }
 });
 

@@ -44,6 +44,7 @@ class AdminPanelProvider extends PanelProvider
                 AppAuthentication::make()->recoverable(),
             ], isRequired: true)
             ->navigationGroups([
+                NavigationGroup::make('Suppliers'),
                 NavigationGroup::make('Catalogue'),
                 NavigationGroup::make('Leads'),
                 NavigationGroup::make('Content'),

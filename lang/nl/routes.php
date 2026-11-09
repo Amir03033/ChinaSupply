@@ -8,4 +8,6 @@ return [
     'about' => 'over-ons',
     'contact' => 'contact',
     'info' => 'info',
+    'suppliers' => 'leveranciers',
+    'supplier_register' => 'leverancier-aanmelden',
 ];

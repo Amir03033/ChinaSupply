@@ -6,6 +6,7 @@ use App\Enums\ContactTopic;
 use App\Enums\EnquiryStatus;
 use App\Http\Requests\StoreContactEnquiryRequest;
 use App\Models\ContactEnquiry;
+use App\Models\Supplier;
 use App\Notifications\NewContactEnquiry;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,14 @@ class ContactController extends Controller
     {
         $topic = ContactTopic::tryFrom((string) $request->query('topic')) ?? ContactTopic::General;
 
-        return view('contact', ['topic' => $topic]);
+        $supplier = $request->filled('supplier')
+            ? Supplier::publiclyVisible()->where('slug', (string) $request->query('supplier'))->first()
+            : null;
+
+        return view('contact', [
+            'topic' => $topic,
+            'prefill' => $supplier ? __('contact.prefill_supplier', ['name' => $supplier->name]) : null,
+        ]);
     }
 
     public function store(StoreContactEnquiryRequest $request): RedirectResponse

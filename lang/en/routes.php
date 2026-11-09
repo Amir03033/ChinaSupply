@@ -8,4 +8,6 @@ return [
     'about' => 'about',
     'contact' => 'contact',
     'info' => 'info',
+    'suppliers' => 'suppliers',
+    'supplier_register' => 'supplier-registration',
 ];

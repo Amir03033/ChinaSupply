@@ -90,7 +90,7 @@ return [
             'We check the information and contact you with any questions.',
             'After approval your profile is published.',
         ],
-        'registration_notice' => 'Online self-registration for suppliers is coming soon. Until then you can apply through the contact form.',
+        'registration_notice' => 'Registration takes about 15 minutes. You can stop at any time: everything is saved automatically.',
         'cta' => 'Register your company',
     ],
     'about' => [

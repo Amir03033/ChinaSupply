@@ -4,6 +4,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SupplierDocumentController;
+use App\Http\Controllers\SupplierProfileController;
+use App\Http\Controllers\SupplierRegistrationController;
+use App\Http\Middleware\EnsureUserType;
 use App\Http\Middleware\SetLocaleFromRoute;
 use App\Support\Locales;
 use Illuminate\Http\Request;
@@ -36,9 +40,16 @@ foreach (Locales::codes() as $locale) {
             Route::post($segment('contact'), [ContactController::class, 'store'])
                 ->middleware('throttle:contact')->name('contact.store');
             Route::get($segment('info').'/{slug}', PageController::class)->name('pages.show');
+            Route::get($segment('suppliers').'/{slug}', [SupplierProfileController::class, 'show'])->name('suppliers.show');
+            Route::get($segment('supplier_register'), [SupplierRegistrationController::class, 'create'])->name('supplier.register');
+            Route::post($segment('supplier_register'), [SupplierRegistrationController::class, 'store'])
+                ->middleware(['guest', 'throttle:5,1'])->name('supplier.register.store');
         });
 }
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('/account', 'account.index')->name('account');
+    Route::view('/account', 'account.index')->middleware(EnsureUserType::class.':buyer')->name('account');
+    Route::view('/supplier-portal', 'supplier.portal')->middleware(EnsureUserType::class.':supplier')->name('supplier.portal');
+    Route::get('/documents/{document}/download', [SupplierDocumentController::class, 'download'])
+        ->middleware('throttle:60,1')->name('documents.download');
 });

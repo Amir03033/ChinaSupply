@@ -17,4 +17,5 @@ return [
     'suppliers' => 'Leveranciers',
     'no_suppliers_title' => 'Nog geen gepubliceerde leveranciers',
     'no_suppliers_text' => 'We bouwen de gecontroleerde leveranciersdatabase voor :name op. Wil je nu al een fabrikant vinden? Beschrijf je product en wij gaan voor je zoeken.',
+    'suppliers_sorted' => 'Gesorteerd op verificatieniveau. Betaalde vermeldingen bestaan nog niet en beïnvloeden deze volgorde nooit ongemerkt.',
 ];
