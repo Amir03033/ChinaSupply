@@ -21,4 +21,5 @@ enum Permission: string
     case ManageVerification = 'verification.manage';
     case ImportExportSuppliers = 'suppliers.import_export';
     case ManageOutreachTemplates = 'outreach_templates.manage';
+    case ManageSourcingRequests = 'sourcing_requests.manage';
 }

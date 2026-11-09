@@ -15,7 +15,7 @@
                 <x-empty-state class="mt-6" :title="__('categories.no_results_title')">
                     {{ __('categories.no_results_text') }}
                     <x-slot:actions>
-                        <x-button :href="localized_route('contact', ['topic' => 'sourcing'])">{{ __('ui.cta.start_request') }}</x-button>
+                        <x-button :href="localized_route('sourcing.create')">{{ __('ui.cta.start_request') }}</x-button>
                         <x-button :href="localized_route('categories.index')" variant="secondary">{{ __('categories.show_all') }}</x-button>
                     </x-slot:actions>
                 </x-empty-state>

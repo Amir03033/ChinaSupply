@@ -45,6 +45,6 @@
             </div>
         </section>
 
-        <div class="mt-12"><x-button :href="localized_route('contact', ['topic' => 'sourcing'])" size="lg">{{ __('ui.cta.start_request') }}</x-button></div>
+        <div class="mt-12"><x-button :href="localized_route('sourcing.create')" size="lg">{{ __('ui.cta.start_request') }}</x-button></div>
     </x-container>
 </x-layouts.app>

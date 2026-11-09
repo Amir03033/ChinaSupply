@@ -33,6 +33,7 @@ enum StaffRole: string
                 Permission::ManageSuppliers,
                 Permission::ImportExportSuppliers,
                 Permission::ManageOutreachTemplates,
+                Permission::ManageSourcingRequests,
             ],
             self::VerificationSpecialist => [
                 Permission::ViewAdminDashboard,

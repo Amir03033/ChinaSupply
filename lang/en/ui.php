@@ -13,6 +13,7 @@ return [
         'main' => 'Main menu',
         'toggle' => 'Open or close menu',
         'home' => 'Home',
+        'suppliers' => 'Suppliers',
         'categories' => 'Categories',
         'how_it_works' => 'How it works',
         'verification' => 'Verification',

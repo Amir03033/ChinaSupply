@@ -128,6 +128,9 @@ class Supplier extends Model
     public static function uniqueSlug(string $name, ?int $ignoreId = null): string
     {
         $base = Str::slug($name) ?: 'supplier';
+        if (in_array($base, ['compare', 'vergelijken'], true)) { // reserved directory routes
+            $base .= '-supplier';
+        }
         $slug = $base;
         $i = 2;
         while (static::withTrashed()->where('slug', $slug)->when($ignoreId, fn ($q) => $q->whereKeyNot($ignoreId))->exists()) {

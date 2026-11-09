@@ -9,5 +9,7 @@ return [
     'contact' => 'contact',
     'info' => 'info',
     'suppliers' => 'leveranciers',
+    'compare' => 'vergelijken',
+    'sourcing_request' => 'sourcing-aanvraag',
     'supplier_register' => 'leverancier-aanmelden',
 ];

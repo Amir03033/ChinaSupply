@@ -2,7 +2,7 @@
     <x-container class="grid gap-12 py-14 lg:grid-cols-5">
         <div class="lg:col-span-2">
             <x-section-header as="h1" :title="__('contact.title')" :lead="__('contact.lead')" />
-            <x-alert class="mt-8">{{ __('contact.sourcing_notice') }}</x-alert>
+            <x-alert class="mt-8">{{ __('contact.sourcing_notice') }} <a href="{{ localized_route('sourcing.create') }}" class="underline">{{ __('ui.cta.start_request') }}</a></x-alert>
         </div>
         <div class="lg:col-span-3">
             @if (session('status'))

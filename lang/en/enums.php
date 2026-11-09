@@ -13,4 +13,6 @@ return [
     'document_type' => ['business_license' => 'Business licence', 'export_license' => 'Export licence', 'certificate' => 'Certificate', 'audit_report' => 'Audit report', 'factory_photo' => 'Factory photo', 'product_catalog' => 'Product catalogue', 'evidence' => 'Verification evidence', 'other' => 'Other'],
     'document_status' => ['pending' => 'Under review', 'approved' => 'Approved', 'rejected' => 'Rejected'],
     'channel' => ['email' => 'Email', 'wechat' => 'WeChat', 'whatsapp' => 'WhatsApp', 'phone' => 'Phone', 'video_call' => 'Video call', 'marketplace_chat' => 'Marketplace chat', 'meeting' => 'Meeting', 'other' => 'Other'],
+    'request_status' => ['submitted' => 'Submitted', 'in_review' => 'In review', 'needs_info' => 'Needs info from buyer', 'sourcing' => 'Sourcing', 'shortlist_ready' => 'Shortlist shared', 'completed' => 'Completed', 'cancelled' => 'Cancelled', 'declined' => 'Declined'],
+    'match_status' => ['suggested' => 'Suggested', 'contacted' => 'Contacted', 'quoted' => 'Quoted', 'declined' => 'Declined / unsuitable', 'shortlisted' => 'Shortlisted', 'selected' => 'Selected by buyer'],
 ];
