@@ -17,4 +17,5 @@ return [
     'suppliers' => 'Suppliers',
     'no_suppliers_title' => 'No published suppliers yet',
     'no_suppliers_text' => 'We are building the checked supplier database for :name. Want to find a manufacturer now? Describe your product and we will search for you.',
+    'suppliers_sorted' => 'Sorted by verification level. Paid listings do not exist yet and will never change this order without a clear label.',
 ];

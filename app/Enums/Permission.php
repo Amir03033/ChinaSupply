@@ -15,4 +15,10 @@ enum Permission: string
     case ManageContactEnquiries = 'contact_enquiries.manage';
     case ManageUsers = 'users.manage';
     case ViewActivityLog = 'activity_log.view';
+    case ViewSuppliers = 'suppliers.view';
+    case ManageSuppliers = 'suppliers.manage';
+    case PublishSuppliers = 'suppliers.publish';
+    case ManageVerification = 'verification.manage';
+    case ImportExportSuppliers = 'suppliers.import_export';
+    case ManageOutreachTemplates = 'outreach_templates.manage';
 }

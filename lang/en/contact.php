@@ -18,4 +18,5 @@ return [
         'message' => 'Message',
         'privacy' => 'privacy policy',
     ],
+    'prefill_supplier' => 'I would like to get in touch with :name. My product and quantities: ',
 ];

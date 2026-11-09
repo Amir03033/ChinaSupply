@@ -44,7 +44,7 @@ class CategoriesTable
                     ->description(fn (Category $record, ListCategories $livewire) => filled($livewire->getTableSearch()) && $record->depth > 0
                         ? 'Level '.$record->depth : null)
                     ->searchable(query: fn (Builder $query, string $search) => $query->whereHas('translations',
-                        fn (Builder $q) => $q->where('name', 'like', '%'.$search.'%')->orWhere('slug', 'like', '%'.$search.'%'))),
+                        fn (Builder $query) => $query->where('name', 'like', '%'.$search.'%')->orWhere('slug', 'like', '%'.$search.'%'))),
                 TextColumn::make('translations_list')
                     ->label('Languages')
                     ->state(fn (Category $record) => $record->translations->pluck('locale')->sort()->implode(', '))

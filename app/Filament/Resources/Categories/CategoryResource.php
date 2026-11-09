@@ -54,7 +54,7 @@ class CategoryResource extends Resource
         $locale = config('chinasupply.default_locale');
 
         $all = Category::query()
-            ->with(['translations' => fn ($q) => $q->where('locale', $locale)])
+            ->with(['translations' => fn ($query) => $query->where('locale', $locale)])
             ->get(['id', 'parent_id', 'path', 'depth', 'sort_order']);
 
         $byParent = $all->groupBy(fn (Category $c) => $c->parent_id ?? 0);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\CategoryTranslation;
+use App\Models\Supplier;
 use App\Support\Locales;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -51,6 +52,12 @@ class CategoryController extends Controller
             ->withCount(['children' => fn ($q) => $q->active()])
             ->get();
 
+        $categoryIds = Category::descendantsOf($category)->active()->pluck('id')->push($category->id);
+        $suppliers = Supplier::publiclyVisible()
+            ->whereHas('categories', fn ($q) => $q->whereIn('categories.id', $categoryIds))
+            ->orderByDesc('verification_level')->orderBy('name')
+            ->paginate(24);
+
         $alternates = collect(Locales::codes())
             ->mapWithKeys(fn (string $locale) => [$locale => ($s = $category->slug($locale))
                 ? localized_route('categories.show', ['slug' => $s], $locale)
@@ -63,6 +70,7 @@ class CategoryController extends Controller
             'translation' => $translation,
             'ancestors' => $category->ancestors(),
             'children' => $children,
+            'suppliers' => $suppliers,
             'alternates' => $alternates,
         ]);
     }

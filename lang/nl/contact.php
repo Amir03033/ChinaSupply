@@ -18,4 +18,5 @@ return [
         'message' => 'Bericht',
         'privacy' => 'privacyverklaring',
     ],
+    'prefill_supplier' => 'Ik wil graag in contact komen met :name. Mijn product en aantallen: ',
 ];

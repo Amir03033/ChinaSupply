@@ -29,10 +29,18 @@ enum StaffRole: string
                 Permission::ViewAdminDashboard,
                 Permission::ViewCategories,
                 Permission::ManageContactEnquiries,
+                Permission::ViewSuppliers,
+                Permission::ManageSuppliers,
+                Permission::ImportExportSuppliers,
+                Permission::ManageOutreachTemplates,
             ],
             self::VerificationSpecialist => [
                 Permission::ViewAdminDashboard,
                 Permission::ViewCategories,
+                Permission::ViewSuppliers,
+                Permission::ManageSuppliers,
+                Permission::PublishSuppliers,
+                Permission::ManageVerification,
             ],
         };
     }

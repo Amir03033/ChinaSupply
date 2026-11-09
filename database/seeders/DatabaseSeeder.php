@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionsSeeder::class,
             CategorySeeder::class,
             PageSeeder::class,
+            CertificationSeeder::class,
+            OutreachTemplateSeeder::class,
         ]);
     }
 }

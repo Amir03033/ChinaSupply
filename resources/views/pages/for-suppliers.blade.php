@@ -18,6 +18,6 @@
             </ol>
         </section>
         <x-alert class="mt-10 max-w-3xl">{{ __('pages.suppliers.registration_notice') }}</x-alert>
-        <div class="mt-6"><x-button :href="localized_route('contact', ['topic' => 'supplier'])" size="lg">{{ __('pages.suppliers.cta') }}</x-button></div>
+        <div class="mt-6"><x-button :href="localized_route('supplier.register')" size="lg">{{ __('pages.suppliers.cta') }}</x-button></div>
     </x-container>
 </x-layouts.app>

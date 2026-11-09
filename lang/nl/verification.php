@@ -13,4 +13,16 @@ return [
         ['level' => 2, 'short' => 'Ook bedrijfsregistratie, adres en type bedrijf (fabrikant of handel) gecontroleerd.', 'checked' => 'Alles van niveau 1, plus de bedrijfsregistratie in het officiële register, het bedrijfsadres en of het bedrijf zelf produceert of handelt.'],
         ['level' => 3, 'short' => 'Ook de fabriek gecontroleerd, via een live videorondleiding of een inspectie ter plaatse.', 'checked' => 'Alles van niveau 2, plus een live videorondleiding door de productie of een inspectie ter plaatse door een externe inspectiepartner.'],
     ],
+    'checks' => [
+        'company_identity' => ['name' => 'Bedrijfsidentiteit'],
+        'contact' => ['name' => 'Contactgegevens'],
+        'website_domain' => ['name' => 'Website en domein'],
+        'business_registration' => ['name' => 'Bedrijfsregistratie'],
+        'business_address' => ['name' => 'Bedrijfsadres'],
+        'factory_existence' => ['name' => 'Bestaan van de fabriek'],
+        'certifications' => ['name' => 'Certificeringen'],
+        'production_capabilities' => ['name' => 'Productiecapaciteit'],
+        'export_documentation' => ['name' => 'Exportdocumentatie'],
+        'external_inspection' => ['name' => 'Externe fabrieksinspectie'],
+    ],
 ];
